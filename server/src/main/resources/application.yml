@@ -1,0 +1,19 @@
+#服务端口
+server:
+  port: 18080
+spring:
+  application:
+    name: server
+  cloud: #nacos配置
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+dubbo:    #dubbo配置
+  registry:
+    address: nacos://127.0.0.1:8848
+  consumer:
+    check: false
+    retries: 0
+logging:
+  level:
+    com.zjy: debug
