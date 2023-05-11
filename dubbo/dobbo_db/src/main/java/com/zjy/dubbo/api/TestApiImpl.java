@@ -3,18 +3,14 @@ package com.zjy.dubbo.api;/**
  * @create 2023-04-27 17:25
  */
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.zjy.dubbo.mappers.TestMapper;
 import com.zjy.model.domain.Test;
 import org.apache.dubbo.config.annotation.DubboService;
 import org.springframework.beans.factory.annotation.Autowired;
 
-/**
- *@ClassName TestApiImpl
- *@Description TODO
- *@Author kaixin
- *@Date 2023/4/27 17:25
- *@Version 1.0
- */
+import java.util.List;
+
 
 @DubboService
 public class TestApiImpl implements TestApi {
@@ -27,5 +23,19 @@ public class TestApiImpl implements TestApi {
         Test test = new Test(integer,str);
         testMapper.insert(test);
         return;
+    }
+
+    @Override
+    public String findById(Integer id) {
+        Test test = testMapper.selectById(id);
+
+        return test.getTxt();
+    }
+
+    @Override
+    public List<Test> findLikely(String str) {
+        QueryWrapper<Test> queryWrapper = new QueryWrapper<>();
+        queryWrapper.like("txt","%"+str+"%");
+        return testMapper.selectList(queryWrapper);
     }
 }

@@ -17,3 +17,5 @@ dubbo:    #dubbo配置
 logging:
   level:
     com.zjy: debug
+  pattern:
+    dateformat: HH:mm:ss:SSS

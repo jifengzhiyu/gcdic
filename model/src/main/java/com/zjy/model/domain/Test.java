@@ -12,13 +12,6 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
-/**
- *@ClassName Test
- *@Description TODO
- *@Author kaixin
- *@Date 2023/4/27 17:17
- *@Version 1.0
- */
 
 @Data
 @NoArgsConstructor

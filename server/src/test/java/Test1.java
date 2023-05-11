@@ -21,7 +21,13 @@ public class Test1 {
     public  void  testMapper() {
 //        int insert = testApi.insert(new com.zjy.model.domain.Test(11, "aa"));
 //        System.out.println(insert);
-        testApi.add("aa",10);
+//        testApi.add("ΆστεΝΗ",10);
+//        System.out.println(testApi.findById(26));
+
+        String str = "αρεσω";
+        System.out.println(testApi.findLikely(str).toString());
+        System.out.println("ααααα");
+
     }
 
 }
