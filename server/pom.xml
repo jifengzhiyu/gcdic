@@ -104,7 +104,7 @@
     </dependencies>
 
     <build>
-        <finalName>tanhua-app-server</finalName>
+        <finalName>server</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
